@@ -79,41 +79,49 @@ if(isset($_POST['add_to_cart'])){
 <section class="categories">
 <h1 class="title">book categories</h1>
 <div class="achievements">
+<a href="shop_eng.php" target="_blank">
 <div class="work">
-      <i class="fa-solid fa-gear"></i>
+   <i class="fa-solid fa-gear"></i>
       <p class="work-heading">Engineering</p>
-      
-    </div>
+    </div> </a>
+
+    <a href="shop_med.php" target="_blank">
     <div class="work">
       <i class="fas fa-stethoscope"></i>
    <p class="work-heading">Medical</p>
       
-    </div>
+    </div></a>
+    
+   <a href="shop_sci.php" target="_blank">
   <div class="work">
    <i class="fas fa-atom"></i>
       <p class="work-heading">Science</p>
     
-    </div>
+    </div></a>
+    
+   <a href="shop_lit.php" target="_blank">
     <div class="work">
     <i class="fas fa-book"></i>
       <p class="work-heading">Literature</p>
    
-    </div>
+    </div></a>
+   <a href="shop_pharmacy.php" target="_blank">
     <div class="work">
     <i class="fa-solid fa-pills"></i>
     <p class="work-heading">Pharmacy</p>
-    </div>
+    </div></a>
+    
+   <a href="shop_other.php" target="_blank">
     <div class="work">
     <i class="fas fa-ellipsis"></i>
       <p class="work-heading">Others</p>
-     
-    </div>
+    </div></a>
   </div>
 </section>
 
 <section class="products">
 
-   <h1 class="title">latest products</h1>
+   <h1 class="title">latest books</h1>
 
    <div class="box-container">
 
@@ -168,9 +176,9 @@ if(isset($_POST['add_to_cart'])){
 <section class="home-contact">
 
    <div class="content">
-      <h3>have any questions?</h3>
+      <h3>Become a seller !</h3>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cumque exercitationem repellendus, amet ullam voluptatibus?</p>
-      <a href="contact.php" class="white-btn">contact us</a>
+      <a href="seller_register.php" class="white-btn">Register with us</a>
    </div>
 
 </section>

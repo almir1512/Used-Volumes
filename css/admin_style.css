@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root{
-   --purple:#8e44ad;
+   --brown:#593b30;
    --red:#c0392b;
    --orange:#f39c12;
    --black:#333;
@@ -23,7 +23,7 @@
 }
 
 *::selection{
-   background-color: var(--purple);
+   background-color: var(--brown);
    color:var(--white);
 }
 
@@ -37,7 +37,7 @@
 }
 
 *::-webkit-scrollbar-thumb{
-   background-color: var(--purple);
+   background-color: var(--brown);
 }
 
 html{
@@ -121,7 +121,7 @@ section{
 
 .white-btn,
 .btn{
-   background-color: var(--purple);
+   background-color: var(--brown);
 }
 
 .option-btn{
@@ -168,7 +168,7 @@ section{
 }
 
 .header .flex .logo span{
-   color:var(--purple);
+   color:var(--brown);
 }
 
 .header .flex .navbar a{
@@ -178,7 +178,7 @@ section{
 }
 
 .header .flex .navbar a:hover{
-   color:var(--purple);
+   color:var(--brown);
 }
 
 .header .flex .icons div{
@@ -189,7 +189,7 @@ section{
 }
 
 .header .flex .icons div:hover{
-   color:var(--purple);
+   color:var(--brown);
 }
 
 .header .flex .account-box{
@@ -218,7 +218,7 @@ section{
 }
 
 .header .flex .account-box p span{
-   color:var(--purple);
+   color:var(--brown);
 }
 
 .header .flex .account-box .delete-btn{
@@ -270,7 +270,7 @@ section{
    margin-top: 1.5rem;
    padding:1.5rem;
    background-color: var(--light-bg);
-   color:var(--purple);
+   color:var(--brown);
    font-size: 2rem;
    border-radius: .5rem;
    border:var(--border);
@@ -407,7 +407,7 @@ section{
 }
 
 .orders .box-container .box p span{
-   color:var(--purple);
+   color:var(--brown);
 }
 
 .orders .box-container .box form{
@@ -451,7 +451,7 @@ section{
 }
 
 .users .box-container .box p span{
-   color:var(--purple);
+   color:var(--brown);
 }
 
 .users .box-container .box .delete-btn{
@@ -484,7 +484,7 @@ section{
 }
 
 .messages .box-container .box p span{
-   color:var(--purple);
+   color:var(--brown);
 }
 
 .messages .box-container .box .delete-btn{
