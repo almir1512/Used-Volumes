@@ -14,6 +14,7 @@ if(isset($_POST['add_product'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $price = $_POST['price'];
+   $category = $_POST['category'];
    $image = $_FILES['image']['name'];
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
@@ -24,7 +25,7 @@ if(isset($_POST['add_product'])){
    if(mysqli_num_rows($select_product_name) > 0){
       $message[] = 'product name already added';
    }else{
-      $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price, image) VALUES('$name', '$price', '$image')") or die('query failed');
+      $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price, category, image) VALUES('$name', '$price','$category', '$image')") or die('query failed');
 
       if($add_product_query){
          if($image_size > 2000000){
@@ -53,8 +54,9 @@ if(isset($_POST['update_product'])){
    $update_p_id = $_POST['update_p_id'];
    $update_name = $_POST['update_name'];
    $update_price = $_POST['update_price'];
+   $updated_category = $_POST['upd_category'];
 
-   mysqli_query($conn, "UPDATE `products` SET name = '$update_name', price = '$update_price' WHERE id = '$update_p_id'") or die('query failed');
+   mysqli_query($conn, "UPDATE `products` SET name = '$update_name', price = '$update_price',category='$updated_category' WHERE id = '$update_p_id'") or die('query failed');
 
    $update_image = $_FILES['update_image']['name'];
    $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
@@ -115,6 +117,15 @@ if(isset($_POST['update_product'])){
       <input type="text" name="name" class="box" placeholder="enter product name" required>
       <input type="number" min="0" name="price" class="box" placeholder="enter product price" required>
       <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
+      <select placeholder="Register as" name="category" class="box">
+         <option value="" disabled selected>Select Book Category</option>
+         <option value="engineering">Engineering</option>
+         <option value="medical">Medical</option>
+         <option value="science">Science</option>
+         <option value="pharmacy">Pharmacy</option>
+         <option value="literature">Literature</option>
+         <option value="other">Other</option>
+      </select>
       <input type="submit" value="add product" name="add_product" class="btn">
    </form>
 
@@ -166,6 +177,15 @@ if(isset($_POST['update_product'])){
       <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required placeholder="enter product name">
       <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
       <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
+      <select placeholder="Register as" name="upd_category" class="box">
+         <option value="" disabled selected>Select Book Category</option>
+         <option value="engineering">Engineering</option>
+         <option value="medical">Medical</option>
+         <option value="science">Science</option>
+         <option value="pharmacy">Pharmacy</option>
+         <option value="literature">Literature</option>
+         <option value="other">Other</option>
+      </select>
       <input type="submit" value="update" name="update_product" class="btn">
       <input type="reset" value="cancel" id="close-update" class="option-btn">
    </form>
