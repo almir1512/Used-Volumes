@@ -521,9 +521,13 @@ section{
    font-size: 2rem;
    color:var(--black);
 }
-
+.products .box-container .box .qty-label{
+   padding:1rem 0;
+   font-size: 2rem;
+   color:var(--black);
+}
 .products .box-container .box .qty{
-   width: 100%;
+   width: 30%;
    padding:1.2rem 1.4rem;
    border-radius: .5rem;
    border:var(--border);
