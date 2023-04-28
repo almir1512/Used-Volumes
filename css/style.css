@@ -466,6 +466,12 @@ section{
    align-items: center;
    padding: 40px 80px;
  }
+ .categories .achievements .work .icon{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
 .categories .achievements .work {
    display: flex;
    flex-direction: column;
@@ -614,6 +620,7 @@ section{
    align-items: center;
    gap:1.5rem;
    justify-content: center;
+   margin-bottom:8rem;
 }
 
 .reviews .box-container .box{

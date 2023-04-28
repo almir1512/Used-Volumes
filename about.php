@@ -52,8 +52,12 @@ if(!isset($user_id)){
 
       <div class="content">
          <h3>why choose us?</h3>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet voluptatibus aut hic molestias, reiciendis natus fuga, cumque excepturi veniam ratione iure. Excepturi fugiat placeat iusto facere id officia assumenda temporibus?</p>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit quos enim minima ipsa dicta officia corporis ratione saepe sed adipisci?</p>
+         <p>Used Volumes is a platform which provides you with the widest selection of
+            the best books at the lowest prices you've ever seen. We connect you with the best resellers 
+            with vast inventory of refurbished books across all categories.</p>
+         <p>We offer sellers an all inclusive platform to sell their products to a wide range of customers.
+            Sellers are provided with a dashboard to analye their sales and services.
+         </p>
          <a href="contact.php" class="btn">contact us</a>
       </div>
 
@@ -69,7 +73,9 @@ if(!isset($user_id)){
 
       <div class="box">
          <img src="images/pic-1.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>This is the best website which is easy to use and provides engineering books at a much affordable rates.
+            I will always recommend engineering students use this platform for affordable books.
+         </p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -77,12 +83,14 @@ if(!isset($user_id)){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>John David</h3><h1 style="color:#666">Student</h1>
       </div>
 
       <div class="box">
          <img src="images/pic-2.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>
+            The user interface is easy to navigate and it serves all my needs for used books.
+         </p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -90,12 +98,13 @@ if(!isset($user_id)){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>Katie Williams</h3><h1 style="color:#666">Student</h1>
+
       </div>
 
       <div class="box">
          <img src="images/pic-3.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ad, quo labore fugiat nam accusamus quia. Ducimus repudiandae dolore placeat.</p>
+         <p>Good platform to list books for sale. It provides me with a larger audience to sell my books. Best website for refurbished book sellers. Always recommend UsedVolumes!</p>
          <div class="stars">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -103,7 +112,7 @@ if(!isset($user_id)){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>James Ziroll</h3><h1 style="color:#666">Seller</h1>
       </div>
 
       <div class="box">
@@ -129,7 +138,7 @@ if(!isset($user_id)){
             <i class="fas fa-star"></i>
             <i class="fas fa-star-half-alt"></i>
          </div>
-         <h3>john deo</h3>
+         <h3>James Ziroll</h3><h1 style="color:#666">Student</h1>
       </div>
 
       <div class="box">
@@ -148,7 +157,7 @@ if(!isset($user_id)){
    </div>
 
 </section>
-
+<!--
 <section class="authors">
 
    <h1 class="title">greate authors</h1>
@@ -223,11 +232,7 @@ if(!isset($user_id)){
 
    </div>
 
-</section>
-
-
-
-
+</section>-->
 
 
 

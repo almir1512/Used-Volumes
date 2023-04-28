@@ -177,7 +177,9 @@ if(isset($_POST['add_to_cart'])){
 
    <div class="content">
       <h3>Become a seller !</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque cumque exercitationem repellendus, amet ullam voluptatibus?</p>
+      <p>Used Volumes provides sellers all inclusive store to sell their inventory of refurbished books. We 
+         connect you with the best customer base to market your volumes.
+      </p>
       <a href="seller_register.php" class="white-btn">Register with us</a>
    </div>
 
