@@ -107,10 +107,10 @@ if(isset($_POST['update_product'])){
 <?php include 'admin_header.php'; ?>
 
 <!-- product CRUD section starts  -->
-
+<!--
 <section class="add-products">
 
-   <h1 class="title">shop products</h1>
+   <h1 class="title"></h1>
 
    <form action="" method="post" enctype="multipart/form-data">
       <h3>add product</h3>
@@ -130,7 +130,7 @@ if(isset($_POST['update_product'])){
    </form>
 
 </section>
-
+-->
 <!-- product CRUD section ends -->
 
 <!-- show products  -->
@@ -147,7 +147,9 @@ if(isset($_POST['update_product'])){
       <div class="box">
          <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
-         <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+         <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
+         <div class="seller">Seller: <?php echo $fetch_products['seller_name']; ?></div>
+
          <a href="admin_products.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
       </div>

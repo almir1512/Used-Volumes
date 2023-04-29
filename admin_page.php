@@ -56,7 +56,7 @@ if(!isset($admin_id)){
                };
             };
          ?>
-         <h3>$<?php echo $total_pendings; ?>/-</h3>
+         <h3>₹<?php echo $total_pendings; ?>/-</h3>
          <p>total pendings</p>
       </div>
 
@@ -71,7 +71,7 @@ if(!isset($admin_id)){
                };
             };
          ?>
-         <h3>$<?php echo $total_completed; ?>/-</h3>
+         <h3>₹<?php echo $total_completed; ?>/-</h3>
          <p>completed payments</p>
       </div>
 
@@ -108,7 +108,7 @@ if(!isset($admin_id)){
             $number_of_admins = mysqli_num_rows($select_admins);
          ?>
          <h3><?php echo $number_of_admins; ?></h3>
-         <p>admin users</p>
+         <p>sellers</p>
       </div>
 
       <div class="box">
