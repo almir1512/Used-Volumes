@@ -242,13 +242,15 @@ section{
 #menu-btn{
    display: none;
 }
-
+.dashboard .title{
+   margin-top: 4rem;
+}
 .dashboard .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
    gap:1.5rem;
    max-width: 1200px;
-   margin:0 auto;
+   margin:7rem auto;
    align-items: flex-start;
 }
 
@@ -311,7 +313,7 @@ section{
    justify-content: center;
    gap:1.5rem;
    max-width: 1200px;
-   margin:0 auto;
+   margin:3rem auto;
    align-items: flex-start;
 }
 
@@ -333,13 +335,19 @@ section{
 }
 
 .show-products .box-container .box .name{
-   padding:1rem 0;
+   padding:.7rem 0;
+   font-size: 2rem;
+   color:var(--black);
+   text-decoration: underline;
+}
+.show-products .box-container .box .seller{
+   padding:.3rem 0;
    font-size: 2rem;
    color:var(--black);
 }
 
 .show-products .box-container .box .price{
-   padding:1rem 0;
+   padding:.1rem 0;
    font-size: 2.5rem;
    color:var(--red);
 }

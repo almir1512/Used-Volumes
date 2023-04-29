@@ -103,7 +103,7 @@ section{
 .delete-btn,
 .white-btn{
    display: inline-block;
-   margin-top: 1rem;
+   margin-top: .5rem;
    padding:1rem 3rem;
    cursor: pointer;
    color:var(--white);
@@ -527,16 +527,17 @@ section{
    color:var(--black);
 }
 .products .box-container .box .qty-label{
-   padding:1rem 0;
+   padding:.7rem 0;
    font-size: 2rem;
    color:var(--black);
+   margin-top:.3rem;
 }
 .products .box-container .box .qty{
    width: 30%;
    padding:1.2rem 1.4rem;
    border-radius: .5rem;
    border:var(--border);
-   margin:1rem 0;
+   margin:.5rem 0;
    font-size: 2rem;
 }
 
