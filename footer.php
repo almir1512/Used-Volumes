@@ -14,7 +14,7 @@
          <h3>extra links</h3>
          <a href="login.php">login</a>
          <a href="register.php">register</a>
-         <a href="cart.php">cart</a>
+         
          <a href="orders.php">orders</a>
       </div>
 
@@ -36,6 +36,6 @@
 
    </div>
 
-   <p class="credit"> &copy; copyright  @ <?php echo date('Y'); ?> by <span>UsedVolumes Inc.</span> </p>
+   <p class="credit"> &copy; <?php echo date('Y'); ?> All rights reserved by <a href="home.php"><span>UsedVolumes Inc.</span></a> </p>
 
 </section>
