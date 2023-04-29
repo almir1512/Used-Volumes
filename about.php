@@ -56,9 +56,10 @@ if(!isset($user_id)){
             the best books at the lowest prices you've ever seen. We connect you with the best resellers 
             with vast inventory of refurbished books across all categories.</p>
          <p>We offer sellers an all inclusive platform to sell their products to a wide range of customers.
-            Sellers are provided with a dashboard to analye their sales and services.
+            Sellers are provided with a dashboard to analye their sales and services. Sellers often get a larger visibilty to enhance their sales.
          </p>
-         <a href="contact.php" class="btn">contact us</a>
+         <a href="seller_register.php" class="btn">Register as seller</a>
+         <a href="contact.php" class="white-btn">contact us</a>
       </div>
 
    </div>
