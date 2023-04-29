@@ -79,7 +79,7 @@ if(isset($message)){
       <select placeholder="Register as" name="user_type" class="box">
          <option value="" disabled selected>Register as </option>
          <option value="user">User</option>
-         <option value="admin">Seller</option>
+         <option value="seller">Seller</option>
       </select>
       <input type="submit" name="submit" value="register now" class="btn">
       <p>Already have an account? <a href="login.php"> login now</a></p>
