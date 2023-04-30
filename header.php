@@ -27,8 +27,9 @@ if(isset($message)){
 
    <div class="header-2">
       <div class="flex">
-         <a href="home.php" class="Logo"><img src="favicon/logo-pr"></a>
-         
+         <a href="home.php" class="Logo"><img src="favicon/favicon-32x32.png"></a>
+         <a href="home.php" class="logo">Used Volumes</a>
+      
 
          <nav class="navbar">
             <a href="home.php">home</a>
@@ -40,8 +41,13 @@ if(isset($message)){
 
          <div class="icons">
             <div id="menu-btn" class="fas fa-bars"></div>
-            <a href="search_page.php" class="fas fa-search"></a>
-            <div id="user-btn" class="fas fa-user"></div>
+         
+         </div>
+         <div class="Icons">
+            <span><a href="search_page.php" class="fas fa-search"></a></span>
+            <span><div id="user-btn" class="fas fa-user"></div></span>
+         
+         
             <?php
                $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
                $cart_rows_number = mysqli_num_rows($select_cart_number);
