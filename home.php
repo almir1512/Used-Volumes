@@ -18,6 +18,9 @@ if(isset($_POST['add_to_cart'])){
    $product_quantity = $_POST['product_quantity'];
    $seller_name = $_POST['seller_name'];
 
+
+   
+
    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `contact` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
       
       mysqli_query($conn, "INSERT INTO `contact`(user_id, name, price, qty, seller) VALUES('$user_id', '$product_name', '$product_price', '$product_quantity', '$seller_name')") or die('query failed');
@@ -25,7 +28,6 @@ if(isset($_POST['add_to_cart'])){
       
 
 }
-
 ?>
 
 <!DOCTYPE html>
