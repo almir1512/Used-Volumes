@@ -27,13 +27,7 @@ if(isset($message)){
 
    <div class="header-2">
       <div class="flex">
-<<<<<<< HEAD
          <a href="home.php" class="logo"><img src="images/logo-pr.png">Used Volumes.</a>
-=======
-         <a href="home.php" class="Logo"><img src="favicon/favicon-32x32.png"></a>
-         <a href="home.php" class="logo">Used Volumes</a>
-      
->>>>>>> 17d473e19f0eb8bcb6d57d9116dff849b7fb3c4a
 
          <nav class="navbar">
             <a href="home.php">home</a>
@@ -47,7 +41,7 @@ if(isset($message)){
             <div id="menu-btn" class="fas fa-bars"></div>
          
          </div>
-         <div class="Icons">
+         <div class="icons">
             <span><a href="search_page.php" class="fas fa-search"></a></span>
             <span><div id="user-btn" class="fas fa-user"></div></span>
          
