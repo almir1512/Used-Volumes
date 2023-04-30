@@ -5,6 +5,8 @@ include 'config.php';
 session_start();
 
 $user_id = $_SESSION['user_id'];
+$user_email = $_SESSION['user_email'];
+$user_name = $_SESSION['user_name'];
 
 if(!isset($user_id)){
    header('location:login.php');
@@ -14,16 +16,15 @@ if(isset($_POST['send'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $number = $_POST['number'];
    $msg = mysqli_real_escape_string($conn, $_POST['message']);
 
-   $select_message = mysqli_query($conn, "SELECT * FROM `message` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
+   $select_message = mysqli_query($conn, "SELECT * FROM `message` WHERE name = '$name' AND email = '$email' AND message = '$msg'") or die('query failed');
 
    if(mysqli_num_rows($select_message) > 0){
-      $message[] = 'message sent already!';
+      $message[] = 'review sent already!';
    }else{
-      mysqli_query($conn, "INSERT INTO `message`(user_id, name, email, number, message) VALUES('$user_id', '$name', '$email', '$number', '$msg')") or die('query failed');
-      $message[] = 'message sent successfully!';
+      mysqli_query($conn, "INSERT INTO `message`(user_id, name, email, message) VALUES('$user_id', '$name', '$email', '$msg')") or die('query failed');
+      $message[] = 'review sent successfully!';
    }
 
 }
@@ -62,12 +63,15 @@ if(isset($_POST['send'])){
 <section class="contact">
 
    <form action="" method="post">
-      <h3>Leave a message!</h3>
+      <h3>Leave a review!</h3>
+<!--
       <input type="text" name="name" required placeholder="enter your name" class="box">
       <input type="email" name="email" required placeholder="enter your email" class="box">
       <input type="number" name="number" required placeholder="enter your number" class="box">
-      <textarea name="message" class="box" placeholder="enter your message" id="" cols="30" rows="10"></textarea>
-      <input type="submit" value="send message" name="send" class="btn">
+-->   <input type="hidden" name="name" value="<?php echo $user_name;?>">
+      <input type="hidden" name="email" value="<?php echo $user_email;?>">
+      <textarea name="message" class="box" placeholder="enter your review" id="" cols="30" rows="10"></textarea>
+      <input type="submit" value="send review" name="send" class="btn">
    </form>
 
 </section>

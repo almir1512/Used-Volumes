@@ -91,7 +91,7 @@ section{
 .title{
    text-align: center;
    margin-top:1rem;
-   margin-bottom: 6rem;
+   margin-bottom: 3.5rem;
    text-transform: uppercase;
    color:var(--black);
    font-size: 3.5rem;
@@ -308,6 +308,7 @@ section{
 }
 
 .header .header-2 .flex .logo{
+   display: flex;
    font-size: 2.5rem;
    color:var(--brown);
    font-weight: 400;
@@ -317,6 +318,14 @@ section{
    margin:0 1rem;
    font-size: 2rem;
    color:var(--light-color);
+}
+.header .header-2 .flex .logo img{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin:0 1rem;
+   height: 3rem;
+   width: 3rem;
 }
 
 .header .header-2 .flex .navbar a:hover{
@@ -462,7 +471,7 @@ section{
 }
 .categories .achievements {
    display: flex;
-   justify-content: space-around;
+   justify-content: space-evenly;
    align-items: center;
    padding: 40px 80px;
  }
@@ -480,13 +489,12 @@ section{
    padding: 0 20px;
  }
  
-.categories .achievements .work i {
-   width: fit-content;
-   font-size: 50px;
-   color: #000000;
-   border-radius: 50%;
+.categories .achievements .work img {
+   height :10rem;
+   width: 10rem;
+   border-radius: 30%;
    border: none;
-   padding: 20px;
+   padding: 15px ;
    background-color: #f1f2f3;
  }
  
@@ -501,7 +509,7 @@ section{
    max-width: 1200px;
    margin:0 auto;
    display: grid;
-   grid-template-columns: repeat(auto-fit, 30rem);
+   grid-template-columns: repeat(auto-fit, 24rem);
    align-items: flex-start;
    gap:1.5rem;
    justify-content: center;
@@ -758,7 +766,7 @@ section{
    height: 20rem;
    resize: none;
 }
-
+/* 
 .shopping-cart .box-container{
    max-width: 1200px;
    margin:0 auto;
@@ -839,8 +847,8 @@ section{
    text-align: center;
    margin-top: 2rem;
    border-radius: .5rem;
-}
-
+} */
+/* 
 .shopping-cart .cart-total p{
    font-size: 2.5rem;
    color:var(--light-color);
@@ -862,7 +870,7 @@ section{
    pointer-events: none;
    opacity: .5;
    user-select: none;
-}
+} */
 
 .display-order{
    max-width: 1200px;
@@ -953,7 +961,7 @@ section{
 }
 
 .placed-orders .box-container .box{
-   flex:1 1 40rem;
+   flex:1 1 30rem;
    border-radius: .5rem;
    padding:2rem;
    border:var(--border);

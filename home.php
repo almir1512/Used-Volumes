@@ -77,41 +77,46 @@ if(isset($_POST['add_to_cart'])){
 <section class="categories">
 <h1 class="title">book categories</h1>
 <div class="achievements">
-<a href="shop_eng.php" target="_blank">
+<a href="shop_eng.php">
 <div class="work">
-   <i class="fa-solid fa-gear"></i>
+      <img src="images/004-engineering.png"/>
       <p class="work-heading">Engineering</p>
     </div> </a>
 
-    <a href="shop_med.php" target="_blank">
+    <a href="shop_med.php">
     <div class="work">
-      <i class="fas fa-stethoscope"></i>
+    <img src="images/005-stethoscope.png"/>
    <p class="work-heading">Medical</p>
       
     </div></a>
     
-   <a href="shop_sci.php" target="_blank">
+   <a href="shop_sci.php">
   <div class="work">
-   <i class="fas fa-atom"></i>
+  <img src="images/006-atom.png"/>
       <p class="work-heading">Science</p>
     
     </div></a>
     
-   <a href="shop_lit.php" target="_blank">
+   <a href="shop_lit.php">
     <div class="work">
-    <i class="fas fa-book"></i>
+    <img src="images/001-poetry.png"/>
       <p class="work-heading">Literature</p>
    
     </div></a>
-   <a href="shop_pharmacy.php" target="_blank">
+   <a href="shop_pharmacy.php">
     <div class="work">
-    <i class="fa-solid fa-pills"></i>
+    <img src="images/002-medicine.png"/>
     <p class="work-heading">Pharmacy</p>
     </div></a>
+    <a href="shop_sci.php">
+  <div class="work">
+  <img src="images/003-architect.png"/>
+      <p class="work-heading">Architecture</p>
     
-   <a href="shop_other.php" target="_blank">
+    </div></a>
+   <a href="shop_other.php">
     <div class="work">
-    <i class="fas fa-ellipsis"></i>
+    <img src="images/007-ellipsis.png"/>
       <p class="work-heading">Others</p>
     </div></a>
   </div>
@@ -124,7 +129,7 @@ if(isset($_POST['add_to_cart'])){
    <div class="box-container">
 
       <?php
-         $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 6") or die('query failed');
+         $select_products = mysqli_query($conn, "SELECT * FROM `products` ORDER BY id DESC LIMIT 8;") or die('query failed');
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>

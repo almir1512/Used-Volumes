@@ -104,16 +104,16 @@ if(!isset($admin_id)){
 
       <div class="box">
          <?php 
-            $select_admins = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'admin'") or die('query failed');
-            $number_of_admins = mysqli_num_rows($select_admins);
+            $select_seller = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'seller'") or die('query failed');
+            $number_of_sellers = mysqli_num_rows($select_seller);
          ?>
-         <h3><?php echo $number_of_admins; ?></h3>
+         <h3><?php echo $number_of_sellers; ?></h3>
          <p>sellers</p>
       </div>
 
       <div class="box">
          <?php 
-            $select_account = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+            $select_account = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type!='admin'") or die('query failed');
             $number_of_account = mysqli_num_rows($select_account);
          ?>
          <h3><?php echo $number_of_account; ?></h3>

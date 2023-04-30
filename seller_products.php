@@ -112,7 +112,7 @@ if(isset($_POST['update_product'])){
 <section class="add-products">
 
    <h1 class="title">Inventory</h1>
-
+   
    <form action="" method="post" enctype="multipart/form-data">
       <h3>add product</h3>
       <input type="text" name="name" class="box" placeholder="enter product name" required>

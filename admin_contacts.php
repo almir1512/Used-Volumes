@@ -45,7 +45,7 @@ if(isset($_GET['delete'])){
 
 <section class="messages">
 
-   <h1 class="title"> messages </h1>
+   <h1 class="title"> review messages </h1>
 
    <div class="box-container">
    <?php

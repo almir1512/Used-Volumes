@@ -17,14 +17,11 @@ if(isset($_POST['add_to_cart'])){
    $product_image = $_POST['product_image'];
    $product_quantity = $_POST['product_quantity'];
 
-   $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+   $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `contact` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
-   if(mysqli_num_rows($check_cart_numbers) > 0){
-      $message[] = 'already added to cart!';
-   }else{
-      mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, quantity, image) VALUES('$user_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
-      $message[] = 'product added to cart!';
-   }
+   mysqli_query($conn, "INSERT INTO `contact`(user_id, name, price, qty, seller) VALUES('$user_id', '$product_name', '$product_price', '$product_quantity', '$seller_name')") or die('query failed');
+   header('location:contact_seller.php');
+   
 
 };
 
@@ -81,12 +78,17 @@ if(isset($_POST['add_to_cart'])){
    <form action="" method="post" class="box">
       <img src="uploaded_img/<?php echo $fetch_product['image']; ?>" alt="" class="image">
       <div class="name"><?php echo $fetch_product['name']; ?></div>
-      <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
-      <input type="number"  class="qty" name="product_quantity" min="1" value="1">
+      <div class="price">₹<?php echo $fetch_product['price']; ?>/-</div>
+      
+      <label for="product_quantity" class="qty-label">Quantity :</label>
+      <input type="number" min="1" name="product_quantity" value="1" class="qty">
+      <div class="name">Seller : <span style="text-decoration:underline"><?php echo $fetch_product['seller_name']; ?></span></div>
+
       <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
       <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
-      <input type="submit" class="btn" value="add to cart" name="add_to_cart">
+      <input type="hidden" name="seller_name" value="<?php echo $fetch_product['seller_name']; ?>">
+      <input type="submit" class="btn" value="Contact Seller" name="add_to_cart">
    </form>
    <?php
             }
