@@ -66,16 +66,17 @@ if(isset($_POST['add_to_cart'])){
    <div class="box-container">
 
       <?php  
-         $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE category='pharmacy'") or die('query failed');
+         $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE category='pharmacy' ORDER BY id DESC") or die('query failed');
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
      <form action="" method="post" class="box">
       <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
       <div class="name"><?php echo $fetch_products['name']; ?></div>
-      <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+      <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
       <label for="product_quantity" class="qty-label">Quantity :</label>
       <input type="number" min="1" name="product_quantity" value="1" class="qty">
+      <div class="name">Seller : <span style="text-decoration:underline"><?php echo $fetch_products['seller_name']; ?></span></div>
 
       <!-- check whether the item is already added to the cart or not -->
       <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">

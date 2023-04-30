@@ -59,12 +59,12 @@ if(isset($_POST['add_to_cart'])){
 
 <section class="products">
 
-   <h1 class="title">latest products</h1>
+   <h1 class="title">latest books</h1>
 
    <div class="box-container">
 
       <?php  
-         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+         $select_products = mysqli_query($conn, "SELECT * FROM `products` ORDER BY id DESC;") or die('query failed');
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
@@ -81,7 +81,7 @@ if(isset($_POST['add_to_cart'])){
       <!-- check whether the item is already added to the cart or not -->
       <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
-      <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+      <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">   
       <input type="hidden" name="seller_name" value="<?php echo $fetch_products['seller_name']; ?>">
       <input type="submit" value="Contact Seller" name="add_to_cart" class="btn">
       <!-- <a href="contact_seller.php" class="btn">Contact Seller</a> -->
