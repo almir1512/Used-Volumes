@@ -278,7 +278,6 @@ section{
    padding:2rem;
    display: flex;
    align-items: center;
-   justify-content: space-between;
    max-width: 1200px;
    margin:0 auto;
    position: relative;
@@ -306,14 +305,19 @@ section{
 .header .header-1 .flex p a:hover{
    text-decoration: underline;
 }
+.header .header-2 .flex .Logo{
+   align-items: center;
 
+}
 .header .header-2 .flex .logo{
+   padding-right: 105px ;
    font-size: 2.5rem;
    color:var(--brown);
    font-weight: 400;
 }
 
 .header .header-2 .flex .navbar a{
+   padding-left: 20px;
    margin:0 1rem;
    font-size: 2rem;
    color:var(--light-color);
@@ -329,6 +333,16 @@ section{
    color:var(--black);
    cursor: pointer;
    margin-left: 1.5rem;
+   
+}
+.header .header-2 .flex .Icons > *{ /* i created a div element for search and user button
+   seprated from menu button , you see main problem here is that  are combined but there no padding-right from orders of navbar  */
+/* i cant find parent class to edit */
+   float: left;
+   font-size: 2.5rem;
+   color:var(--black);
+   cursor: pointer;
+   margin-left: 1.45rem;
 }
 
 .header .header-2 .flex .icons > *:hover{
