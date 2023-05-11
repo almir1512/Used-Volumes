@@ -29,10 +29,10 @@ if(isset($message)){
 
    <div class="header-2">
       <div class="flex">
-         <a href="home.php" class="logo"><img src="images/logo-pr.png">Used Volumes</a>
+         <a href="home1.php" class="logo"><img src="images/logo-pr.png">Used Volumes</a>
 
          <nav class="navbar">
-            <a href="home.php">home</a>
+            <a href="home1.php">home</a>
             <a href="about.php">about</a>
             <a href="shop.php">shop</a>
             <a href="contact.php">contact</a>

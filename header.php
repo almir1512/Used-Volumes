@@ -28,7 +28,7 @@ if(isset($message)){
 
    <div class="header-2">
       <div class="flex">
-         <a href="home1.php" class="logo"><img src="images/logo-pr.png">Used Volumes.</a>
+         <a href="home.php" class="logo"><img src="images/logo-pr.png">Used Volumes.</a>
 
          <nav class="navbar">
             <a href="home.php">home</a>
