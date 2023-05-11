@@ -54,11 +54,11 @@ if(isset($_POST['send'])){
 </head>
 <body>
    
-<?php include 'header1.php'; ?>
+<?php include 'header.php'; ?>
 
 <div class="heading">
    <h3>contact us</h3>
-   <p> <a href="home1.php">home</a> / contact </p>
+   <p> <a href="home.php">home</a> / contact </p>
 </div>
 
 <section class="contact">

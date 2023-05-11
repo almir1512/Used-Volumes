@@ -64,11 +64,11 @@ else{
    <p> <a href=<?php 
 if(!isset($user_id)){
    
-   echo 'home1.php'; 
+   echo 'home.php'; 
    }
 else{
 
-   echo 'home.php'; 
+   echo 'home1.php'; 
 }
 
 ?>>home</a> / <a href="shop.php">shop</a> / science</p>

@@ -31,7 +31,7 @@ if(isset($message)){
          <a href="home1.php" class="logo"><img src="images/logo-pr.png">Used Volumes.</a>
 
          <nav class="navbar">
-            <a href="home1.php">home</a>
+            <a href="home.php">home</a>
             <a href="about.php">about</a>
             <a href="shop1.php">shop</a>
             <a href="contact1.php">contact</a>
