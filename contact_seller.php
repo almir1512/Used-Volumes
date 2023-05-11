@@ -14,6 +14,7 @@ if(isset($_POST['order_btn'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $number = $_POST['number'];
+   $isbn= mysqli_real_escape_string($conn, $_POST['isbn']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $method = mysqli_real_escape_string($conn, $_POST['method']);
    $address = mysqli_real_escape_string($conn, 'flat no. '. $_POST['flat'].', '. $_POST['street'].', '. $_POST['city'].', '. $_POST['country'].' - '. $_POST['pin_code']);
@@ -43,7 +44,7 @@ if(isset($_POST['order_btn'])){
       if(mysqli_num_rows($order_query) > 0){
          $message[] = 'order already placed!'; 
       }else{
-         mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, seller, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products','$seller_name1', '$cart_total', '$placed_on')") or die('query failed12001');
+         mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, isbn, email, method, address, total_products, seller, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$isbn', '$email', '$method', '$address', '$total_products','$seller_name1', '$cart_total', '$placed_on')") or die('query failed12001');
          $message[] = 'order placed to the seller successfully!';
          mysqli_query($conn, "DELETE FROM `contact` WHERE user_id = '$user_id'") or die('query failed');
       }
@@ -92,18 +93,19 @@ if(isset($_POST['order_btn'])){
       if(mysqli_num_rows($select_cart) > 0){
             $fetch_cart = mysqli_fetch_assoc($select_cart);
             $seller_name = $fetch_cart['seller'];
+            $isbn=$fetch_cart['isbn'];
             $total_price = ($fetch_cart['price'] * $fetch_cart['qty']);
             $grand_total += $total_price;
    ?>
    <p>Seller : <?php echo $seller_name;?></p>
-   <p> <?php echo $fetch_cart['name']; ?> <span>(<?php echo '$'.$fetch_cart['price'].'/-'.' x '. $fetch_cart['qty']; ?>)</span> </p>
+   <p> <?php echo $fetch_cart['name']; ?> <span>(<?php echo '₹'.$fetch_cart['price'].'/-'.' x '. $fetch_cart['qty']; ?>)</span> </p>
    <?php
     
    }else{
       echo '<p class="empty">your cart is empty</p>';
    }
    ?>
-   <div class="grand-total"> grand total : <span>$<?php echo $grand_total; ?>/-</span> </div>
+   <div class="grand-total"> grand total : <span>₹<?php echo $grand_total; ?>/-</span> </div>
 
 </section>
 
@@ -159,8 +161,8 @@ if(isset($_POST['order_btn'])){
          </div>
          <input type="hidden" name="seller" value="<?php echo $seller_name; ?>">
       </div>
+      <input type="hidden" value="<?php echo $isbn?>" name="isbn"> 
       <input type="submit" value="order now" class="btn" name="order_btn">
-      <div class="btn">Cancel Order</div>
    </form>
 
 </section>

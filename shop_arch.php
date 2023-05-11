@@ -7,8 +7,8 @@ include 'config.php';
 // $user_id = $_SESSION['user_id'];
 
 // if(!isset($user_id)){
-//    header('location:login.php');4
-
+//    header('location:login.php');
+// }
 
 if(isset($_POST['add_to_cart'])){
 
@@ -32,7 +32,7 @@ if(isset($_POST['add_to_cart'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>engineering book</title>
+   <title>architecture  book</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -47,7 +47,7 @@ if(isset($_POST['add_to_cart'])){
    <link rel="manifest" href="favicon/site.webmanifest">
 </head>
 <body>
-   
+     
 <?php 
 if(!isset($user_id)){
    
@@ -59,7 +59,6 @@ else{
 }
 
 ?>
-
 <div class="heading">
    <h3>our shop</h3>
    <p> <a href=<?php 
@@ -72,17 +71,17 @@ else{
    echo 'home.php'; 
 }
 
-?>>home</a> / <a href="shop.php">shop</a> / engineering</p>
+?>>home</a> / <a href="shop.php">shop</a> / architecture </p>
 </div>
 
 <section class="products">
 
-   <h1 class="title">engineering books</h1>
+   <h1 class="title">architecture  books</h1>
 
    <div class="box-container">
 
       <?php  
-         $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE category='engineering' ORDER BY id DESC") or die('query failed');
+         $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE category='architecture ' ORDER BY id DESC") or die('query failed');
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>

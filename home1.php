@@ -2,30 +2,30 @@
 
 include 'config.php';
 
-// session_start();
+session_start();
 
-// $user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 
-// if(!isset($user_id)){
-//    header('location:login.php');}
-
-
+if(!isset($user_id)){
+   header('location:login.php');
+}
 
 if(isset($_POST['add_to_cart'])){
-   header('location:login.php');
-   // $product_name = $_POST['product_name'];
-   // $product_price = $_POST['product_price'];
-   // $product_image = $_POST['product_image'];
-   // $product_quantity = $_POST['product_quantity'];
-   // $seller_name = $_POST['seller_name'];
+
+   $product_name = $_POST['product_name'];
+   $product_price = $_POST['product_price'];
+   $isbn= $_POST['product_isbn'];
+   $product_image = $_POST['product_image'];
+   $product_quantity = $_POST['product_quantity'];
+   $seller_name = $_POST['seller_name'];
 
 
    
 
-   // $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `contact` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+   $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `contact` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
       
-   //    mysqli_query($conn, "INSERT INTO `contact`(user_id, name, price, qty, seller) VALUES('$user_id', '$product_name', '$product_price', '$product_quantity', '$seller_name')") or die('query failed');
-   //    header('location:contact_seller.php');
+      mysqli_query($conn, "INSERT INTO `contact`(user_id, name, isbn, price, qty, seller) VALUES('$user_id', '$product_name', '$isbn', '$product_price', '$product_quantity', '$seller_name')") or die('query failed');
+      header('location:contact_seller.php');
       
 
 }
@@ -53,7 +53,7 @@ if(isset($_POST['add_to_cart'])){
 </head>
 <body>
 
-<?php include 'header.php'; ?>
+<?php include 'header1.php'; ?>
 
 <section class="home">
 
@@ -127,7 +127,7 @@ if(isset($_POST['add_to_cart'])){
 
 <section class="products">
 
-   <h1 class="title">latest books</h1>
+   <h1 class="title">newly&ensp;added&ensp;books</h1>
 
    <div class="box-container">
 
@@ -145,11 +145,11 @@ if(isset($_POST['add_to_cart'])){
       
       <div class="isbn">ISBN <?php echo $fetch_products['isbn']; ?></div>
       <div class="name">Seller : <span style="text-decoration:underline"><?php echo $fetch_products['seller_name']; ?></span></div>
-
+      
       <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
       <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-      
+      <input type="hidden" name="product_isbn" value="<?php echo $fetch_products['isbn']; ?>">
       <input type="hidden" name="seller_name" value="<?php echo $fetch_products['seller_name']; ?>">
       <input type="submit" value="contact seller" name="add_to_cart" class="btn">
      </form>
@@ -162,7 +162,7 @@ if(isset($_POST['add_to_cart'])){
    </div>
 
    <div class="load-more" style="margin-top: 2rem; text-align:center">
-      <a href="shop1.php" class="option-btn">load more</a>
+      <a href="shop.php" class="option-btn">load more</a>
    </div>
 
 </section>
@@ -178,7 +178,7 @@ if(isset($_POST['add_to_cart'])){
       <div class="content">
          <h3>about us</h3>
          <p>Used Volumes team bridges the gap between resellers and book buyers by providing an all inclusive platform to buy used books at the best prices.</p>
-         <a href="about.php" class="btn">read more</a>
+         <a href="about1.php" class="btn">read more</a>
       </div>
 
    </div>

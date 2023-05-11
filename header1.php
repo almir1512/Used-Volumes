@@ -1,4 +1,5 @@
 
+
 <?php
 if(isset($message)){
    foreach($message as $message){
@@ -28,13 +29,14 @@ if(isset($message)){
 
    <div class="header-2">
       <div class="flex">
-         <a href="home1.php" class="logo"><img src="images/logo-pr.png">Used Volumes.</a>
+         <a href="home.php" class="logo"><img src="images/logo-pr.png">Used Volumes</a>
 
          <nav class="navbar">
-            <a href="home1.php">home</a>
+            <a href="home.php">home</a>
             <a href="about.php">about</a>
-            <a href="shop1.php">shop</a>
-            <a href="contact1.php">contact</a>
+            <a href="shop.php">shop</a>
+            <a href="contact.php">contact</a>
+            <a href="orders.php">orders</a>
          </nav>
 
          <div class="icons">
@@ -42,20 +44,20 @@ if(isset($message)){
          
          </div>
          <div class="icons">
-            <span><a href="search_page1.php" class="fas fa-search"></a></span>
-            
+            <span><a href="search_page.php" class="fas fa-search"></a></span>
+            <span><div id="user-btn" class="fas fa-user"></div></span>
          
          
             <?php
             ?>
             <!-- <a href="cart.php"> <i class="fas fa-shopping-cart"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a> -->
          </div>
-<!-- 
+
          <div class="user-box">
             <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
             <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
             <a href="logout.php" class="delete-btn">logout</a>
-         </div> -->
+         </div>
       </div>
    </div>
 

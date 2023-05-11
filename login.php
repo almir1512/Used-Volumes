@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
          $_SESSION['user_name'] = $row['name'];
          $_SESSION['user_email'] = $row['email'];
          $_SESSION['user_id'] = $row['id'];
-         header('location:home.php');
+         header('location:home1.php');
 
       }elseif($row['user_type'] == 'seller'){
 

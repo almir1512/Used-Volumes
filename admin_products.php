@@ -149,7 +149,7 @@ if(isset($_POST['update_product'])){
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
          <div class="seller">Seller: <?php echo $fetch_products['seller_name']; ?></div>
-
+         <div class="isbn" style="font-family:Rubik;padding:1rem 0;font-size: 1.4rem;color:#000000">ISBN: <?php echo $fetch_products['isbn']; ?></div>
          <a href="admin_products.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
       </div>

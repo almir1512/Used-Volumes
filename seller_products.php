@@ -10,10 +10,15 @@ if(!isset($seller_name)){
    header('location:login.php');
 };
 
+$pattern = "/^(?=(?:[^0-9]*[0-9]){10}(?:(?:[^0-9]*[0-9]){3})?$)[\\d-]+$/i";
 
 if(isset($_POST['add_product'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $isbn = mysqli_real_escape_string($conn, $_POST['isbn']);
+   $isbn_match =  preg_match($pattern, $isbn); 
+   if($isbn_match){
+
    $price = $_POST['price'];
    $category = $_POST['category'];
    $image = $_FILES['image']['name'];
@@ -26,7 +31,7 @@ if(isset($_POST['add_product'])){
    if(mysqli_num_rows($select_product_name) > 0){
       $message[] = 'product name already added';
    }else{
-      $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price, category, image,seller_name) VALUES('$name', '$price','$category', '$image','$seller_name')") or die('query failed');
+      $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price, category, image, seller_name) VALUES('$name', '$price','$category', '$image','$seller_name')") or die('query failed');
 
       if($add_product_query){
          if($image_size > 2000000){
@@ -39,6 +44,9 @@ if(isset($_POST['add_product'])){
          $message[] = 'product could not be added!';
       }
    }
+}else{
+   $message[]='invalid isbn no';
+}
 }
 
 if(isset($_GET['delete'])){
@@ -51,13 +59,16 @@ if(isset($_GET['delete'])){
 }
 
 if(isset($_POST['update_product'])){
-
+   
+   $isbn1 = mysqli_real_escape_string($conn, $_POST['update_isbn']);
+   $isbn_match1 =  preg_match($pattern, $isbn1); 
+   if($isbn_match1){
    $update_p_id = $_POST['update_p_id'];
    $update_name = $_POST['update_name'];
    $update_price = $_POST['update_price'];
    $updated_category = $_POST['upd_category'];
 
-   mysqli_query($conn, "UPDATE `products` SET name = '$update_name', price = '$update_price',category='$updated_category' WHERE id = '$update_p_id' AND seller_name='$seller_name'") or die('query failed');
+   mysqli_query($conn, "UPDATE `products` SET name = '$update_name',isbn='$isbn1', price = '$update_price',category='$updated_category' WHERE id = '$update_p_id' AND seller_name='$seller_name'") or die('query failed');
 
    $update_image = $_FILES['update_image']['name'];
    $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
@@ -76,9 +87,11 @@ if(isset($_POST['update_product'])){
    }
 
    header('location:seller_products.php');
-
+   }
+   else{
+      $message[]='invalid isbn no';
+   }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -117,6 +130,7 @@ if(isset($_POST['update_product'])){
       <h3>add product</h3>
       <input type="text" name="name" class="box" placeholder="enter product name" required>
       <input type="number" min="0" name="price" class="box" placeholder="enter product price" required>
+      <input type="text" name="isbn" class="box" placeholder="enter ISBN number (only digits and hyphen)" required>
       <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
       <select placeholder="Register as" name="category" class="box">
          <option value="" disabled selected>Select Book Category</option>
@@ -125,6 +139,7 @@ if(isset($_POST['update_product'])){
          <option value="science">Science</option>
          <option value="pharmacy">Pharmacy</option>
          <option value="literature">Literature</option>
+         <option value="architecture">Architecture</option>
          <option value="other">Other</option>
       </select>
       <input type="submit" value="add product" name="add_product" class="btn">
@@ -149,6 +164,7 @@ if(isset($_POST['update_product'])){
          <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
+         <div class="isbn" style="font-family:Rubik;padding:1rem 0;font-size: 1.4rem;color:#000000">ISBN: <?php echo $fetch_products['isbn']; ?></div>
          <a href="seller_products.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="seller_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
       </div>
@@ -177,6 +193,7 @@ if(isset($_POST['update_product'])){
       <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
       <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required placeholder="enter product name">
       <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
+      <input type="text" name="update_isbn" value="<?php echo $fetch_update['isbn']; ?>" class="box" placeholder="enter ISBN number (only digits and hyphen)" required>
       <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
       <select placeholder="Register as" name="upd_category" class="box">
          <option value="" disabled selected>Select Book Category</option>

@@ -413,47 +413,47 @@ section{
    filter: blur(4px);
  }
 .home .content span:nth-child(1) {
-   animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
- }
- 
- .home .content span:nth-child(2) {
-   animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
- }
- 
- .home .content span:nth-child(3) {
-   animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
- }
- 
- .home .content span:nth-child(4) {
    animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
  }
  
- .home .content span:nth-child(5) {
+ .home .content span:nth-child(2) {
    animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
  }
  
- .home .content span:nth-child(6) {
+ .home .content span:nth-child(3) {
    animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
  }
  
- .home .content span:nth-child(7) {
+ .home .content span:nth-child(4) {
    animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
  }
  
- .home .content span:nth-child(8) {
+ .home .content span:nth-child(5) {
    animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
  }
  
- .home .content span:nth-child(9) {
+ .home .content span:nth-child(6) {
    animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
  }
  
- .home .content span:nth-child(10) {
+ .home .content span:nth-child(7) {
    animation: fade-in 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
  }
  
- .home .content span:nth-child(11) {
+ .home .content span:nth-child(8) {
    animation: fade-in 0.8s 1.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+ }
+ 
+ .home .content span:nth-child(9) {
+   animation: fade-in 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+ }
+ 
+ .home .content span:nth-child(10) {
+   animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+ }
+ 
+ .home .content span:nth-child(11) {
+   animation: fade-in 0.8s 1.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
  }
   
 @keyframes fade-in {
@@ -470,23 +470,19 @@ section{
    line-height: 1.5;
 }
 .categories .achievements {
-   display: flex;
-   justify-content: space-evenly;
-   align-items: center;
-   padding: 40px 80px;
- }
- .categories .achievements .work .icon{
-   display: flex;
+   padding: 40px 20px;
+   max-width: 1200px;
+   margin:0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 15rem);
+   align-items: flex-start;
+   gap:1.5rem;
    justify-content: center;
-   align-items: center;
- }
+ } 
 
 .categories .achievements .work {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   padding: 0 20px;
+   position:relative;
+   text-align: center;
  }
  
 .categories .achievements .work img {
@@ -532,6 +528,12 @@ section{
 .products .box-container .box .name{
    padding:1rem 0;
    font-size: 2rem;
+   color:var(--black);
+}
+
+.products .box-container .box .isbn{
+   padding:1rem 0;
+   font-size: 1.4rem;
    color:var(--black);
 }
 .products .box-container .box .qty-label{
@@ -1001,12 +1003,9 @@ section{
 }
 
 
-
-
-
-
-
-
+.shop .empty{
+   flex : 1;
+}
 
 
 .footer{

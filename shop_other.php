@@ -2,13 +2,13 @@
 
 include 'config.php';
 
-session_start();
+// session_start();
 
-$user_id = $_SESSION['user_id'];
+// $user_id = $_SESSION['user_id'];
 
-if(!isset($user_id)){
-   header('location:login.php');
-}
+// if(!isset($user_id)){
+//    header('location:login.php');
+// }
 
 if(isset($_POST['add_to_cart'])){
 
@@ -17,15 +17,11 @@ if(isset($_POST['add_to_cart'])){
    $product_image = $_POST['product_image'];
    $product_quantity = $_POST['product_quantity'];
 
-   $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+   $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `contact` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
-   if(mysqli_num_rows($check_cart_numbers) > 0){
-      $message[] = 'already added to cart!';
-   }else{
-      mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, quantity, image) VALUES('$user_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
-      $message[] = 'product added to cart!';
-   }
-
+   mysqli_query($conn, "INSERT INTO `contact`(user_id, name,isbn, price, qty, seller) VALUES('$user_id', '$product_name','$isbn', '$product_price', '$product_quantity', '$seller_name')") or die('query failed');
+   header('location:contact_seller.php');
+   
 }
 
 ?>
@@ -36,7 +32,7 @@ if(isset($_POST['add_to_cart'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Other Books</title>
+   <title>other book</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -52,16 +48,36 @@ if(isset($_POST['add_to_cart'])){
 </head>
 <body>
    
-<?php include 'header.php'; ?>
+<?php 
+if(!isset($user_id)){
+   
+   include 'header.php'; 
+   }
+else{
+
+   include 'header1.php'; 
+}
+
+?>
 
 <div class="heading">
    <h3>our shop</h3>
-   <p> <a href="home.php">home</a> / <a href="shop.php">shop</a> / other</p>
+   <p> <a href=<?php 
+if(!isset($user_id)){
+   
+   echo 'home1.php'; 
+   }
+else{
+
+   echo 'home.php'; 
+}
+
+?>>home</a> / <a href="shop.php">shop</a> / other</p>
 </div>
 
 <section class="products">
 
-   <h1 class="title">Other books</h1>
+   <h1 class="title">other books</h1>
 
    <div class="box-container">
 
@@ -78,14 +94,17 @@ if(isset($_POST['add_to_cart'])){
       <input type="number" min="1" name="product_quantity" value="1" class="qty">
       <div class="name">Seller : <span style="text-decoration:underline"><?php echo $fetch_products['seller_name']; ?></span></div>
 
+      
+      <div class="isbn">ISBN <?php echo $fetch_products['isbn']; ?></div>
       <!-- check whether the item is already added to the cart or not -->
       <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
       <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-      <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+      <input type="hidden" name="product_isbn"  value="<?php echo $fetch_products['isbn']; ?>">>
+      <input type="submit" value="Contact Seller" name="add_to_cart" class="btn">
      </form>
       <?php
-         }
+         } 
       }else{
          echo '<p class="empty">no products added yet!</p>';
       }
