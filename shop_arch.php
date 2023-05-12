@@ -11,6 +11,9 @@ include 'config.php';
 // }
 
 if(isset($_POST['add_to_cart'])){
+   if(!isset($user_id)){
+      header('location:login.php');
+      }else{
 
    $product_name = $_POST['product_name'];
    $product_price = $_POST['product_price'];
@@ -21,7 +24,7 @@ if(isset($_POST['add_to_cart'])){
 
    mysqli_query($conn, "INSERT INTO `contact`(user_id, name,isbn, price, qty, seller) VALUES('$user_id', '$product_name','$isbn', '$product_price', '$product_quantity', '$seller_name')") or die('query failed');
    header('location:contact_seller.php');
-   
+      }
 }
 
 ?>
@@ -64,11 +67,11 @@ else{
    <p> <a href=<?php 
 if(!isset($user_id)){
    
-   echo 'home1.php'; 
+   echo 'home.php'; 
    }
 else{
 
-   echo 'home.php'; 
+   echo 'home1.php'; 
 }
 
 ?>>home</a> / <a href="shop.php">shop</a> / architecture </p>
