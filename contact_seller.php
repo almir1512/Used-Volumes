@@ -78,7 +78,7 @@ if(isset($_POST['order_btn'])){
 </head>
 <body>
    
-<?php include 'header.php'; ?>
+<?php include 'header1.php'; ?>
 
 <div class="heading">
    <h3>contact seller</h3>

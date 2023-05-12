@@ -53,7 +53,7 @@ if(isset($_POST['send'])){
 </head>
 <body>
    
-<?php include 'header.php'; ?>
+<?php include 'header1.php'; ?>
 
 <div class="heading">
    <h3>contact us</h3>

@@ -51,7 +51,7 @@ if(isset($_POST['add_to_cart'])){
 </head>
 <body>
    
-<?php include 'header.php'; ?>
+<?php include 'header1.php'; ?>
 
 <div class="heading">
    <h3>our shop</h3>

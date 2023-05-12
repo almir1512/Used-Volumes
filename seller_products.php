@@ -31,7 +31,7 @@ if(isset($_POST['add_product'])){
    if(mysqli_num_rows($select_product_name) > 0){
       $message[] = 'product name already added';
    }else{
-      $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price, category, image, seller_name) VALUES('$name', '$price','$category', '$image','$seller_name')") or die('query failed');
+      $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price,isbn, category, image, seller_name) VALUES('$name', '$price','$isbn','$category', '$image','$seller_name')") or die('query failed');
 
       if($add_product_query){
          if($image_size > 2000000){
@@ -165,6 +165,7 @@ if(isset($_POST['update_product'])){
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="price">₹<?php echo $fetch_products['price']; ?>/-</div>
          <div class="isbn" style="font-family:Rubik;padding:1rem 0;font-size: 1.4rem;color:#000000">ISBN: <?php echo $fetch_products['isbn']; ?></div>
+         <div class="isbn" style="font-family:Rubik;padding:0rem 0;font-size: 1.6rem;color:#000000">Category : <?php echo $fetch_products['category']; ?></div>
          <a href="seller_products.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="seller_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
       </div>

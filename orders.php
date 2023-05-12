@@ -36,7 +36,7 @@ if(!isset($user_id)){
 </head>
 <body>
    
-<?php include 'header.php'; ?>
+<?php include 'header1.php'; ?>
 
 <div class="heading">
    <h3>your orders</h3>
