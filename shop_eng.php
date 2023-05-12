@@ -53,11 +53,11 @@ if(isset($_POST['add_to_cart'])){
 <?php 
 if(!isset($user_id)){
    
-   include 'header1.php'; 
+   include 'header.php'; 
    }
 else{
 
-   include 'header.php'; 
+   include 'headerphp'; 
 }
 
 ?>
